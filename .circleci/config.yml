@@ -30,7 +30,10 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
-
+      - run: 
+      echo "$DOCKERHUB_PASSWORD" | docker login --username cwc329 --password-stdin
+      
+      - run: docker build -t cwc329/lineBotAssistance
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
