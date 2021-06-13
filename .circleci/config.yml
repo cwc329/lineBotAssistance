@@ -49,7 +49,7 @@ jobs:
 
       - run:
           name: docker publish
-          command: docker push
+          command: docker push cwc329/line_bot_assistance
   # build:
 
 workflows:
