@@ -30,10 +30,9 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
-      - run: echo DockerPwd:$DOCKERHUB_PASSWORD
-      #- run: docker login -u cwc329 -p $DOCKERHUB_PASSWORD
+      - run: docker login -u cwc329 -p $DOCKERHUB_PASSWORD
 
-      #- run: docker build -t cwc329/lineBotAssistance
+      - run: docker build -t cwc329/lineBotAssistance
   build:
 
 workflows:
