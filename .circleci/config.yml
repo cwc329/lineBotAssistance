@@ -5,6 +5,9 @@ executors:
   node-executor:
     docker:
       - image: circleci/node:12
+  docker-publisher:
+    docker:
+      - image: circleci/buildpack-deps:stretch
 orbs:
   # The Node.js orb contains a set of prepackaged CircleCI configuration you can utilize
   # Orbs reduce the amount of configuration required for common tasks.
@@ -33,6 +36,9 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
+      - setup_remote_docker:
+          version: 19.03.13
+          docker_layer_caching: true
       - run:
           name: docker login
           command: |
