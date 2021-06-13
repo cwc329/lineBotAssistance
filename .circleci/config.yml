@@ -34,10 +34,8 @@ jobs:
       #   name: docker login
       #   command: |
       #   docker login -u cwc329 -p $DOCKERHUB_PASSWORD
-      - run:
-        name: docker build
-        command: docker build -t cwc329/lineBotAssistance
-  build:
+      - run: build -t cwc329/lineBotAssistance
+  # build:
 
 workflows:
   # Below is the definition of your workflow.
